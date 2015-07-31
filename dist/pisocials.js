@@ -1,6 +1,6 @@
 /*
 * pisocials - v0.1.0
-* update 2015-07-31
+* update 2015-08-01
 * copyright tanaka@pixelimage.jp
 * license MIT
 */
@@ -84,7 +84,7 @@
 			s = s.split('{SERVICE}').join(this.sname);
 			s = s.split('{TITLE}').join(this.title);
 			s = s.split('{URL}').join(this.url);
-			s = s.split('{ENCODE_URL}').join(encodeURIComponent(this.settings.url));
+			s = s.split('{ENCODE_URL}').join(encodeURIComponent(this.url));
 			return s;
 		};
 		p.formatCount = function(_n) {

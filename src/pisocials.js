@@ -78,7 +78,7 @@
 			s = s.split('{SERVICE}').join(this.sname);
 			s = s.split('{TITLE}').join(this.title);
 			s = s.split('{URL}').join(this.url);
-			s = s.split('{ENCODE_URL}').join(encodeURIComponent(this.settings.url));
+			s = s.split('{ENCODE_URL}').join(encodeURIComponent(this.url));
 			return s;
 		};
 		p.formatCount = function(_n) {
