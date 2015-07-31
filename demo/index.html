@@ -6,17 +6,43 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<title>piSocials -- ソーシャルボタン埋め込みjQueryプラグイン</title>
-	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="FacebookやTwitterなどのソーシャル関連ボタンを、まとめて簡単に埋め込むことができる、jQueryプラグインです。">
+	<meta name="keywords" content="Facebook,Twiiter,はてな,ブックマーク,シェアボタン,いいね,">
+
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+	<link href="pisocials.css" rel="stylesheet" type="text/css" />
 	<link href="index.css" rel="stylesheet" type="text/css" />
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="pisocials.js"></script>
 	<script type="text/javascript" src="index.js"></script>
+<script>
+$(function(){
+var param = {
+	"services": [
+		"facebookShare",
+		"facebookLike",
+		"twitter",
+		"googleplus",
+		"hatena",
+		"pocket"
+	],
+	"url": "http://pixelimage.github.io/pisocials/",
+	"title": "piSocials -- ソーシャルボタン埋め込みjQueryプラグイン",
+	"size": "M",
+	"design": "flat",
+	"round": 0,
+	"color": ""
+}
+$("#SocialArea").pisocials(param);	
+});
+</script>
 
 </head>
 <body role="document">
@@ -24,6 +50,7 @@
   <div class="container">
 	<h1>piSocials<small><small> -- ソーシャルボタン埋め込みjQueryプラグイン</small></small></h1>
     <p class="lead">FacebookやTwitterなどのソーシャル関連ボタンを、まとめて簡単に埋め込むことができる、jQueryプラグインです。</p>
+    <div id="SocialArea"></div>
   </div>
 </div>
 
@@ -36,6 +63,11 @@
 	<li>「コードの取得」でコードを取得</li>
 	<li>自身のサイトへ組み込み</li>
 </ol>
+
+<h3>ダウンロード</h3>
+	<a href="pisocials.zip" class="btn btn-primary">ダウンロード ( ZIP ) </a>
+	or 
+	<a href="https://github.com/pixelimage/pisocials" target="blank" class="btn btn-primary">ソースコード ( GitHub )</a>
 <h3>設定</h3>
 <div class="panel panel-default">
 	<div class="panel-body">
@@ -134,13 +166,15 @@
 <ul class="">
 	<li>MIT ライセンスです</li>
 </ul>
+<br>
 
 <h3>更新履歴</h3>
 <ul class="">
 	<li>2015/07/31 公開しました。</li>
 </ul>
-<h3>開発者情報</h3>
+<br>
 
+<h3>開発者情報</h3>
 <ul class="">
 	<li>メール：<a href="mailtp:tanaka@pixelimage.jp">tanaka@pixelimage.jp</a></li>
 	<li>ブログ：<a href="http://www.pixelimage.jp/blog/" target="_blank">http://www.pixelimage.jp/blog/</a></li>

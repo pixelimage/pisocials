@@ -2,6 +2,8 @@ body {
 	background: #f2f2f2;
 	padding-bottom: 160px;
 }
+ul { margin: 0; padding: 0;}
+
 .jumbotron {
 	background: #333;
 	color: #fff;
