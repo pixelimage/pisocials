@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>piSocials -- ソーシャルボタン埋め込みjQueryプラグイン</title>
+	
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+	<link href="index.css" rel="stylesheet" type="text/css" />
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+
+</head>
+<body role="document">
+<div class="jumbotron">
+  <div class="container">
+	<h1>piSocials<small><small> -- ソーシャルボタン埋め込みjQueryプラグイン</small></small></h1>
+    <p class="lead">FacebookやTwitterなどのソーシャル関連ボタンを、まとめて簡単に埋め込むことができる、jQueryプラグインです。</p>
+  </div>
+</div>
+
+<div class="container">
+
+<h3>使い方</h3>
+<ol class="">
+	<li>ライブラリのダウンロード</li>
+	<li>「設定」でカスタマイズを行う</li>
+	<li>「コードの取得」でコードを取得</li>
+	<li>自身のサイトへ組み込み</li>
+</ol>
+<h3>設定</h3>
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div id="ConditionView">
+			<form class="form-horizontal">
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">シェアURL</label>
+			    <div class="col-sm-10">
+					<input type="text" class="form-control in_url" value="http://www.yahoo.co.jp">
+					<p class="help-block">シェアするURLを入力します。<br>何も入力しない場合は、ページごとのURL ( window.location.href ) が使用されます。例えば、ブログのURLをシェアしたいときはブログのURLを入力し、記事ごとにシェアしたいときは、空欄にしてください。</p>
+				</div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">シェアタイトル</label>
+			    <div class="col-sm-10">
+					<input type="text" class="form-control in_title" value="Yahoo!">
+					<p class="help-block">シェアするタイトルを入力します。<br>何も入力しない場合は、ページごとのタイトルタグの値 ( document.title ) が使用されます。例えば、ブログタイトルをシェアしたいときはブログのタイトルを入力し、記事ごとにタイトルをシェアしたいときは、空欄にしてください。</p>
+				</div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">サービス</label>
+			    <div class="col-sm-10">
+					<button class="btn btn-default btn_service" data-no="0">Facebookシェア</button>
+					<button class="btn btn-default btn_service" data-no="1">Facebookいいね</button>
+					<button class="btn btn-default btn_service" data-no="2">twitter</button>
+					<button class="btn btn-default btn_service" data-no="3">googleplus</button>
+					<button class="btn btn-default btn_service" data-no="4">はてなブックマーク</button>
+					<button class="btn btn-default btn_service" data-no="5">pocket</button>
+				</div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">ボタンデザイン</label>
+			    <div class="col-sm-10">
+					<div class="btn-group" role="group" aria-label="...">
+						<button class="btn btn-default btn_design" data-no="0">オフィシャルボタン</button>
+						<button class="btn btn-default btn_design" data-no="1">フラットデザインボタン</button>
+					</div>
+				</div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">サイズ</label>
+			    <div class="col-sm-10">
+					<div class="btn-group" role="group" aria-label="...">
+						<button class="btn btn-default btn_size" data-no="0">S</button>
+						<button class="btn btn-default btn_size" data-no="1">M</button>
+						<button class="btn btn-default btn_size" data-no="2">L</button>
+					</div>
+				</div>
+			  </div>
+			  <div class="form-group btns-round">
+			    <label class="col-sm-2 control-label">角丸</label>
+			    <div class="col-sm-10">
+					<div class="btn-group" role="group" aria-label="...">
+						<button class="btn btn-default btn_round" data-no="0">なし</button>
+						<button class="btn btn-default btn_round" data-no="1">5px</button>
+						<button class="btn btn-default btn_round" data-no="2">10px</button>
+						<button class="btn btn-default btn_round" data-no="3">20px</button>
+						<button class="btn btn-default btn_round" data-no="4">40px</button>
+					</div>
+				</div>
+			</div>
+			  <div class="form-group btns-color">
+			    <label class="col-sm-2 control-label">配色</label>
+			    <div class="col-sm-10">
+					<div class="btn-group" role="group" aria-label="...">
+						<button class="btn btn-default btn_color" data-no="0">サービスカラー</button>
+						<button class="btn btn-default btn_color" data-no="1">ライトグレー</button>
+						<button class="btn btn-default btn_color" data-no="2">グレー</button>
+						<button class="btn btn-default btn_color" data-no="3">ブラック</button>
+						<button class="btn btn-default btn_color" data-no="4">ホワイト</button>
+					</div>
+				</div>
+			  </div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<h3>コードの取得</h3>
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div id="CodeView">
+			<p>以下のコードをコピペしてください。</p>
+	   		<textarea class="form-control" id="PreviewCode" readonly></textarea>
+		</div>
+	</div>
+</div>
+	
+	
+<div id="PreView">
+	<div class="title">プレビュー</div>
+	<div class="inner"></div>
+</div>
+
+<h3>ライセンス</h3>
+<ul class="">
+	<li>MIT ライセンスです</li>
+</ul>
+
+<h3>更新履歴</h3>
+<ul class="">
+	<li>2015/07/31 公開しました。</li>
+</ul>
+<h3>開発者情報</h3>
+
+<ul class="">
+	<li>メール：<a href="mailtp:tanaka@pixelimage.jp">tanaka@pixelimage.jp</a></li>
+	<li>ブログ：<a href="http://www.pixelimage.jp/blog/" target="_blank">http://www.pixelimage.jp/blog/</a></li>
+	<li>Twiiter：<a href="https://twitter.com/pixelimage_jp" target="_blank">https://twitter.com/pixelimage_jp</a></li>
+</ul>
+
+
+
+<textarea style="display:none;" id="BaseCode"><html>
+<head>
+<link href="pisocials.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="pisocials.js"></script>
+<script>
+$(function(){
+var param = {PARAM}
+$("#element-id").pisocials(param);	
+});
+</script>
+</head>
+<body>
+<div id="element-id"></div>
+</body>
+<html>
+</textarea>
+</div>
+</body>
+</html>
