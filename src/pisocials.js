@@ -30,6 +30,7 @@
 			}
 			view.append(tag);
 		});
+		
 		return this;
 	};
 
@@ -115,6 +116,14 @@
 					});
 				}
 			}
+			//クリックアサイン
+			node.find("a").click(function(event){ 
+				var u = $(this).attr("href");
+				var rect = self.serviceData.custom.shareRect;
+				window.open(u, "share", "width="+rect[0]+", height="+rect[1]+", menubar=no, toolbar=no, scrollbars=yes");
+				event.stopPropagation();
+				event.preventDefault();
+			});
 			return node;
 		};
 		return c;

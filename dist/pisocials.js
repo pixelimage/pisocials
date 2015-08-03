@@ -1,6 +1,6 @@
 /*
-* pisocials - v0.1.0
-* update 2015-08-01
+* pisocials - v0.1.1
+* update 2015-08-03
 * copyright tanaka@pixelimage.jp
 * license MIT
 */
@@ -36,6 +36,7 @@
 			}
 			view.append(tag);
 		});
+		
 		return this;
 	};
 
@@ -121,6 +122,14 @@
 					});
 				}
 			}
+			//クリックアサイン
+			node.find("a").click(function(event){ 
+				var u = $(this).attr("href");
+				var rect = self.serviceData.custom.shareRect;
+				window.open(u, "share", "width="+rect[0]+", height="+rect[1]+", menubar=no, toolbar=no, scrollbars=yes");
+				event.stopPropagation();
+				event.preventDefault();
+			});
 			return node;
 		};
 		return c;
@@ -145,7 +154,7 @@
 			custom: {
 				dataType: 'jsonp',
 				shareWin: 'https://facebook.com/sharer/sharer.php?u={URL}',
-				shareRect: [600, 300],
+				shareRect: [700, 500],
 				countUrl: 'http://graph.facebook.com/?id={ENCODE_URL}',
 				getResult: function(data) { return data.shares; }
 			}
@@ -182,7 +191,7 @@
 			custom: {
 				dataType: 'jsonp',
 				shareWin: 'https://twitter.com/share?url={ENCODE_URL}&text={TITLE}',
-				shareRect: [600, 300],
+				shareRect: [650, 360],
 		        countUrl: 'https://cdn.api.twitter.com/1/urls/count.json?url={URL}&callback=?',
 		        getResult: function(data) { return data.count; }
 			}
@@ -205,7 +214,7 @@
 			custom: {
 				dataType: 'text',
 				shareWin: 'https://plus.google.com/share?url={URL}',
-				shareRect: [600, 300],
+				shareRect: [900, 500],
 				countUrl: 'https://cors-anywhere.herokuapp.com/https://plusone.google.com/_/+1/fastbutton?url={ENCODE_URL}',
 				getResult: function(data) {
 				    return parseInt((data.match(/\{c: ([\d]+)/) || [])[1]);
@@ -223,7 +232,7 @@
 			custom: {
 				dataType: 'jsonp',
 				shareWin: 'http://b.hatena.ne.jp/add?mode=confirm&url={ENCODE_URL}&title={TITLE}',
-				shareRect: [600, 300],
+				shareRect: [550, 500],
 				countUrl: 'http://api.b.st-hatena.com/entry.count?url={ENCODE_URL}',
 				getResult: function(data) {
 					if (!data) {data = 0;}
@@ -252,7 +261,7 @@
 			custom: {
 				dataType: 'xml',
 				shareWin: 'http://getpocket.com/edit?url={ENCODE_URL}&title={TITLE}',
-				shareRect: [600, 300],
+				shareRect: [500, 300],
 				countUrl: 'https://cors-anywhere.herokuapp.com/http://widgets.getpocket.com/v1/button?v=1&count=horizontal&url={URL}',
 				getResult: function(data) {
 				   return parseInt($(data).find('#cnt').text());
